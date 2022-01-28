@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
     <head>
+        <title>NewGeoFlow</title>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
@@ -8,13 +9,44 @@
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
         <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
     </head>
-
+    
+    <style>    
+      .fixed {
+        margin: auto;
+        width: 30%;
+        
+        border: 3px solid green;
+        padding: 0.1%;
+        border-radius: 30px;
+        background: #73AD21;
+        text-align: center;
+        justify-content: center;
+      }
+</style>
+    
+        <script>             
+          
+         AFRAME.registerComponent('markerhandler', {
+         tock:function() {
+             
+     if(document.querySelectorAll('a-entity').object3D.visible == true) {document.getElementById("div").textContent = "MARKER1"; } 
+   
+   }
+});
+            
+      
+        
+</script>
+    
+    
+                
     <body style="margin: 0; overflow: hidden;">
         <a-scene
             renderer="logarithmicDepthBuffer: true;"
             embedded
             loading-screen="enabled: false;"
             arjs="sourceType: webcam; debugUIEnabled: false;"
+            markerhandler
         >
             <a-assets>
                 <a-asset-item
